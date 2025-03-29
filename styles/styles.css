@@ -26,6 +26,7 @@
     --accent3-fall: #b5d8a6;
     --neutral-fall: #f8f7f7;
 
+    --winning-color: #d6c668;
   }
 
   /* CSS RESET */
@@ -165,6 +166,11 @@
   }
 
   .game-page .game-grid .game-cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: clamp(2rem, 3vw, 4rem);
+    font-weight: bold;
     border-radius: 16px;
     cursor: pointer;
     transition: filter ease-in-out 0.3s,
@@ -174,6 +180,11 @@
   .game-page .game-grid .game-cell:hover {
     filter: brightness(0.85);
     transform: scale(1.1);
+  }
+
+  .game-page.winter .game-grid .game-cell.winning, .game-page.spring .game-grid .game-cell.winning,
+  .game-page.summer .game-grid .game-cell.winning, .game-page.fall .game-grid .game-cell.winning {
+    background-color: var(--winning-color);
   }
 
   /* WINTER */
@@ -193,6 +204,7 @@
 
   .game-page.winter .game-grid .game-cell {
     background-color: var(--accent2-winter);
+    color: var(--acent1-winter);
   }
 
   /* SPRING */
@@ -212,6 +224,7 @@
 
   .game-page.spring .game-grid .game-cell {
     background-color: var(--accent2-spring);
+    color: var(--neutral-spring);
   }
 
   /* SUMMER */
@@ -231,6 +244,7 @@
 
   .game-page.summer .game-grid .game-cell {
     background-color: var(--accent2-summer);
+    color: var(--neutral-summer);
   }
 
   /* FALL */
@@ -250,4 +264,5 @@
 
   .game-page.fall .game-grid .game-cell {
     background-color: var(--accent2-fall);
+    color: var(--acent1-fall);
   }
